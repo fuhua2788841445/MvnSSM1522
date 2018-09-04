@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<script>
+    function submit(){
+        var email = $("#email").val();
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var param = {user_email: email, user_name: username, user_password: password};
+        $.ajax({
+            url: 'ajax/post.do',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(param),
+            success: function(data) {
+                console.info(data);
+            },
+            error: function(data) {
+                console.info(data);
+            }
+        })
+        // $.post("ajax/post.do", JSON.stringify(param)).then(function(data){
+        //     console.info(data);
+        // })
+
+    }
+</script>
+    <table>
+        <tr>
+            <td>邮箱：</td>
+            <td><input type="text" id="email" /></td>
+        </tr>
+        <tr>
+            <td>用户名：</td>
+            <td><input type="text" id="username" /></td>
+        </tr>
+        <tr>
+            <td>密码：</td>
+            <td><input type="password" id="password" /></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="提交" onclick="submit()" /></td>
+            <td><input type="reset" value="重置"></td>
+        </tr>
+    </table>
+</body>
+</html>
