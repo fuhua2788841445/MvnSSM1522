@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MvnSSM1522:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="MvnSSM1522.war">
+      <element id="artifact" artifact-name="MvnSSM1522:war exploded" />
+    </root>
+  </artifact>
+</component>
